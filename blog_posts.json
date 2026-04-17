@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "author": "Liam Carter",
+    "title": "The Art of Starting Small",
+    "content": "Every big achievement begins with a small step. Starting small allows you to build momentum without feeling overwhelmed. Focus on consistency rather than perfection, and over time, those small efforts will compound into meaningful progress."
+  },
+  {
+    "id": 2,
+    "author": "Sophie Bennett",
+    "title": "Why Morning Routines Matter",
+    "content": "A structured morning routine can set the tone for the entire day. Whether it’s a short walk, journaling, or a quiet cup of coffee, these rituals help center your thoughts and boost productivity."
+  },
+  {
+    "id": 3,
+    "author": "Noah Fischer",
+    "title": "Exploring Creativity in Daily Life",
+    "content": "Creativity isn’t limited to artists. It shows up in how you solve problems, communicate ideas, and approach challenges. By embracing curiosity, you can unlock creativity in even the simplest tasks."
+  },
+  {
+    "id": 4,
+    "author": "Emma Laurent",
+    "title": "Balancing Work and Rest",
+    "content": "In a fast-paced world, rest is often undervalued. Taking breaks and allowing time for recovery is essential for long-term productivity and mental well-being."
+  },
+  {
+    "id": 5,
+    "author": "Lucas Meyer",
+    "title": "The Power of Learning Something New",
+    "content": "Learning keeps the mind sharp and engaged. Whether it’s picking up a new language or trying a different hobby, continuous learning adds excitement and growth to life."
+  },
+  {
+    "id": 6,
+    "author": "Mia Novak",
+    "title": "Digital Minimalism: Less is More",
+    "content": "Reducing digital clutter can lead to greater focus and clarity. By limiting distractions and being intentional with technology, you can reclaim your time and attention."
+  },
+  {
+    "id": 7,
+    "author": "Ethan Rossi",
+    "title": "Finding Inspiration in Nature",
+    "content": "Nature has a calming effect that can inspire new ideas and perspectives. A simple walk outside can refresh your mind and spark creativity."
+  },
+  {
+    "id": 8,
+    "author": "Isabella Costa",
+    "title": "Building Better Habits",
+    "content": "Habits shape our daily lives. By starting with small, manageable changes and staying consistent, you can build habits that lead to lasting improvements."
+  },
+  {
+    "id": 9,
+    "author": "Oliver Schmidt",
+    "title": "Overcoming Procrastination",
+    "content": "Procrastination often stems from fear or uncertainty. Breaking tasks into smaller steps and focusing on progress rather than perfection can help overcome this common challenge."
+  },
+  {
+    "id": 10,
+    "author": "Ava Petrov",
+    "title": "The Value of Reflection",
+    "content": "Taking time to reflect on your experiences allows you to learn and grow. Reflection helps you understand what worked, what didn’t, and how to move forward with clarity."
+  }
+]
