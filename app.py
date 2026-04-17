@@ -1,5 +1,5 @@
 import json
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 from flask import Flask, request, redirect
 from flask import render_template
@@ -26,6 +26,13 @@ def get_next_id(blog_posts) -> int:
     return max_id + 1
 
 
+def get_post_by_id(blog_posts, post_id) -> Tuple[int, Dict] | Tuple[None, None]:
+    for i, post in enumerate(blog_posts):
+        if post["id"] == post_id:
+            return i, post
+    return None, None
+
+
 def add_post(author, title, content, json_file_path):
     """Creates a new blog_post dictionary and adds it to the database"""
     blog_posts = read_blogs_from_json(json_file_path)
@@ -44,6 +51,11 @@ def remove_post(post_id, json_file_path):
     blog_posts = read_blogs_from_json(json_file_path)
     blog_posts = [post for post in blog_posts if post["id"] != post_id]
     write_blogs_to_json(json_file_path=json_file_path, data=blog_posts)
+
+
+# --------------------------
+#       APP ROUTES
+# --------------------------
 
 
 @app.route("/")
@@ -77,6 +89,33 @@ def add():
 def delete(post_id):
     remove_post(post_id=post_id, json_file_path="blog_posts.json")
     return redirect("/")
+
+
+@app.route("/update/<int:post_id>", methods=["POST", "GET"])
+def update(post_id):
+    error_msg = ""
+    json_file_path = "blog_posts.json"
+    blog_posts = read_blogs_from_json(json_file_path)
+    i, post = get_post_by_id(blog_posts, post_id)
+    if post is None or i is None:
+        return "Post not found", 404
+
+    if request.method == "POST":
+        author = request.form.get("author", "")
+        title = request.form.get("title", "")
+        content = request.form.get("content", "")
+        if not (author == "" or title == "" or content == ""):
+            blog_posts[i] = {
+                "id": post_id,
+                "author": author,
+                "title": title,
+                "content": content,
+            }
+            write_blogs_to_json(json_file_path=json_file_path, data=blog_posts)
+            return redirect("/")
+        else:
+            error_msg = "Please fill in author, title, and content"
+    return render_template("update_form.html", message=error_msg, post=post)
 
 
 if __name__ == "__main__":

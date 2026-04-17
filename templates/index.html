@@ -16,6 +16,9 @@
                 <form action="{{ url_for('delete', post_id=post['id']) }}" method="post" style="display:inline;">
                     <button type="submit">Delete</button>
                 </form>
+                <form action="{{ url_for('update', post_id=post['id']) }}" method="post" style="display:inline;">
+                    <button type="submit">Update</button>
+                </form>
         </div>
         <p><em>Written by {{ post["author"] }}</em></p>
         <p>{{ post["content"] }}</p>
