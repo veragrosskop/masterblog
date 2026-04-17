@@ -1,0 +1,1 @@
+This repository contains a basic flask based Masterblog.
