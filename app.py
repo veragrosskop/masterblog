@@ -26,7 +26,7 @@ def get_next_id(blog_posts) -> int:
     return max_id + 1
 
 
-def add_post(author, title, content, json_file_path) -> List[Dict]:
+def add_post(author, title, content, json_file_path):
     """Creates a new blog_post dictionary and adds it to the database"""
     blog_posts = read_blogs_from_json(json_file_path)
     blog_post = {
@@ -36,6 +36,13 @@ def add_post(author, title, content, json_file_path) -> List[Dict]:
         "id": get_next_id(blog_posts),
     }
     blog_posts.append(blog_post)
+    write_blogs_to_json(json_file_path=json_file_path, data=blog_posts)
+
+
+def remove_post(post_id, json_file_path):
+    """Removes a post from the database"""
+    blog_posts = read_blogs_from_json(json_file_path)
+    blog_posts = [post for post in blog_posts if post["id"] != post_id]
     write_blogs_to_json(json_file_path=json_file_path, data=blog_posts)
 
 
@@ -64,6 +71,12 @@ def add():
             # display error message
             error_msg = "Please fill in author, title, and content"
     return render_template("add_form.html", message=error_msg)
+
+
+@app.route("/delete/<int:post_id>", methods=["POST"])
+def delete(post_id):
+    remove_post(post_id=post_id, json_file_path="blog_posts.json")
+    return redirect("/")
 
 
 if __name__ == "__main__":

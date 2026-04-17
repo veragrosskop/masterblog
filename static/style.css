@@ -25,3 +25,17 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-header h2 {
+    margin: 0;
+}
+
+.post-header form {
+    margin: 0;
+}

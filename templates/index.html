@@ -11,7 +11,12 @@
     <a href="{{ url_for('add') }}">Add a new blog article!</a>
     {% for post in blog_posts %}
     <div class="post">
-        <h2>{{ post["title"] }}</h2>
+        <div class="post-header">
+            <h2>{{ post["title"] }}</h2>
+                <form action="{{ url_for('delete', post_id=post['id']) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+        </div>
         <p><em>Written by {{ post["author"] }}</em></p>
         <p>{{ post["content"] }}</p>
     </div>
