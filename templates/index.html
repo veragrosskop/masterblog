@@ -13,7 +13,7 @@
     <div class="post">
         <div class="post-header">
             <h2>{{ post["title"] }}</h2>
-                <form action="{{ url_for('delete', post_id=post['id']) }}" method="post" style="display:inline;">
+                <form action="{{ url_for('delete', post_id=post['id']) }}" method="get" style="display:inline;">
                     <button type="submit">Delete</button>
                 </form>
                 <form action="{{ url_for('update', post_id=post['id']) }}" method="post" style="display:inline;">

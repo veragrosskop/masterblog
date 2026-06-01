@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Delete Post</title>
+</head>
+<body>
+
+<h2>Delete Post</h2>
+
+<p>
+    Are you sure you want to delete
+    "<strong>{{ post['title'] }}</strong>"?
+</p>
+
+<form method="POST">
+    <button type="submit">Yes, delete</button>
+</form>
+
+<a href="{{ url_for('index') }}">Cancel</a>
+
+</body>
+</html>
